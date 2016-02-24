@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+    <title>IonApp</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    IonApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="col-sm-6">
+            <button class="btn btn-primary" id="openFile">Choose Ionic Project</button>
+            <span id="directoryPath"></span>
+        </div>
+
+        <div class="col-sm-6">
+            <select class="form-control" id="commandSelect">
+                <option value="ionic serve">ionic serve</option>
+                <option value="ionic run android">ionic run android</option>
+                <option value="ionic emulate android">ionic emulate android</option>
+                <option value="ionic run ios">ionic run ios</option>
+                <option value="ionic emulate ios">ionic emulate ios</option>
+            </select>
+
+            <button class="btn btn-success" id="runCommand">Run Command</button>
+        </div>
+
+    </div>
+
+    <div id="runningBlock" class="container">
+        
+        <div id="commandIRan"></div>
+
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce1"></div>
+            <div class="sk-child sk-double-bounce2"></div>
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
 </html>
